@@ -330,9 +330,19 @@ void Context::ellipse(const vec2 &center, float rx, float ry) {
 void Context::circle(float cx, float cy, float r) {
   nvgCircle(get(), cx, cy, r);
 }
-void Context::circle(const vec2 &center, float radius) {
-  circle(center.x, center.y, radius);
-}
+  void Context::circle(const vec2 &center, float radius) {
+    circle(center.x, center.y, radius);
+  }
+
+  void Context::cross(float cx, float cy, float r){
+    moveTo(cx-r,cy-r);
+    lineTo(cx+r,cy+r);
+    moveTo(cx-r,cy+r);
+    lineTo(cx+r,cy-r);
+  }
+  void Context::cross(const vec2 &center, float radius){
+    cross(center.x,center.y,radius);
+  }
 
 void Context::fill() {
   nvgFill(get());

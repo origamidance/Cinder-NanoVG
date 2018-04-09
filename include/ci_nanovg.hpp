@@ -156,6 +156,8 @@ public:
   void ellipse(const vec2 &center, float rx, float ry);
   void circle(float cx, float cy, float r);
   void circle(const vec2 &center, float radius);
+  void cross(float cx, float cy, float r);
+  void cross(const vec2 &center, float radius);
 
   void fill();
   void stroke();
