@@ -158,6 +158,8 @@ public:
   void circle(const vec2 &center, float radius);
   void cross(float cx, float cy, float r);
   void cross(const vec2 &center, float radius);
+  void plus(float cx, float cy, float r);
+  void plus(const vec2 &center, float radius);
 
   void fill();
   void stroke();

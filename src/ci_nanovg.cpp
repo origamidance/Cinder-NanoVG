@@ -335,13 +335,23 @@ void Context::circle(float cx, float cy, float r) {
   }
 
   void Context::cross(float cx, float cy, float r){
-    moveTo(cx-r,cy-r);
-    lineTo(cx+r,cy+r);
-    moveTo(cx-r,cy+r);
-    lineTo(cx+r,cy-r);
+    moveTo(cx-0.707*r,cy-0.707*r);
+    lineTo(cx+0.707*r,cy+0.707*r);
+    moveTo(cx-0.707*r,cy+0.707*r);
+    lineTo(cx+0.707*r,cy-0.707*r);
   }
   void Context::cross(const vec2 &center, float radius){
     cross(center.x,center.y,radius);
+  }
+
+  void Context::plus(float cx, float cy, float r){
+    moveTo(cx-r,cy);
+    lineTo(cx+r,cy);
+    moveTo(cx,cy-r);
+    lineTo(cx,cy+r);
+  }
+  void Context::plus(const vec2 &center, float radius){
+    plus(center.x,center.y,radius);
   }
 
 void Context::fill() {
